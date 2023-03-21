@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("send-message", (data) => {
-    const { reciever } = data;
+    const { reciever } = data.data;
     const user = activeUsers.find((user) => user.userId === reciever);
 
     console.log(data);
