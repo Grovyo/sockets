@@ -29,7 +29,6 @@ io.on("connection", (socket) => {
     const { reciever } = data.data;
     const user = activeUsers.find((user) => user.userId === reciever);
 
-    console.log(data);
     if (user) {
       io.to(user.socketId).emit("recieve-message", data);
     } else {
